@@ -2,7 +2,8 @@
 // Input: "madam" → Output: true
 
 const palindrome = (str) => {
-  const firstLetter = str[0];
+    const convertedStr = str.toLowerCase();
+  const firstLetter = convertedStr[0];
   if (str.endsWith(firstLetter)) {
     return true;
   } else {
