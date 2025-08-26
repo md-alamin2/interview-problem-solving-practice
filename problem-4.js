@@ -1,21 +1,19 @@
 // Find the first non-repeated character in a string
 // Input: "swiss" → Output: "w"
-// TODO: i will do it later
-const findNonRepeated=(str)=>{
-    const convertedStr = str.toLowerCase();
-    const strArray =  convertedStr.split("")
-    let repeated = "";
-    let nonRepeated = [];
-    for(let i = 0; i<convertedStr.length; i++ ){
-        if(strArray.includes(convertedStr[i])){
-            if(convertedStr[i]){
-                repeated = convertedStr[i]
-            }else{
-                nonRepeated.push(convertedStr[i])
-            }
-        }
-    }
-    console.log(nonRepeated[0])
-}
 
-findNonRepeated("Programming hero")
+const findNonRepeated = (str) => {
+  const convertedStr = str.toLowerCase();
+  const strCount = {};
+  const lessCount = 1;
+  for (let char of convertedStr) {
+    strCount[char] = (strCount[char] || 0) + 1;
+  }
+
+  for (let char of convertedStr) {
+    if (strCount[char] === lessCount) {
+      return char;
+    }
+  }
+};
+
+console.log(findNonRepeated("JavaScript"));
