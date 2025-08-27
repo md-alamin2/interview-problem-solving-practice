@@ -3,19 +3,19 @@
 
 const frequentCharacter = (str) => {
   const newStr = str.toLowerCase();
- const strCount = {}
- let mostFrequentLength = 0;
- let mostFrequent = ""
+  const strCount = {};
+  let mostFrequentLength = 0;
+  let mostFrequent = "";
   for (let char of newStr) {
     strCount[char] = (strCount[char] || 0) + 1;
   }
-  for (let char of newStr){
-    if(strCount[char] > mostFrequentLength){
-      mostFrequentLength = strCount[char]
-      mostFrequent = char
+  for (let char of newStr) {
+    if (strCount[char] > mostFrequentLength) {
+      mostFrequentLength = strCount[char];
+      mostFrequent = char;
     }
   }
-  console.log(mostFrequent)
+  console.log(mostFrequent);
 };
 
-frequentCharacter("Javascript")
+frequentCharacter("Javascript");
